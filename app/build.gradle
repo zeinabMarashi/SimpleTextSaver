@@ -49,4 +49,6 @@ dependencies {
     // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:2.7.4"
     implementation "androidx.navigation:navigation-ui-ktx:2.7.4"
+    //chip navigation
+    implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
 }

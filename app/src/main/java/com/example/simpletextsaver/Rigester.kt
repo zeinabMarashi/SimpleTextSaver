@@ -23,7 +23,7 @@ class Rigester : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val navController = findNavController()
-        val inclusive = true // Set to true to include this fragment in the pop
+        val inclusive = true
         navController.popBackStack(R.id.rigester, inclusive)
         }
     }

@@ -2,32 +2,36 @@ package com.example.simpletextsaver
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.NavController
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.simpletextsaver.databinding.ActivityMainBinding
+import com.ismaeldivita.chipnavigation.ChipNavigationBar
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         setSupportActionBar(binding.toolBarMain)
-        binding.bottomNavigation.setOnItemSelectedListener {
-            val navController = findNavController(R.id.fragmentContainerView)
-            when (it) {
+        val bottomNavigationView: ChipNavigationBar = binding.bottomNavigation
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navController = navHostFragment.navController
+
+        bottomNavigationView.setItemSelected(R.id.register, true)
+
+        bottomNavigationView.setOnItemSelectedListener { itemId ->
+            when (itemId) {
                 R.id.home -> {
-                    navController.navigateUp()
                     navController.navigate(R.id.home)
                 }
                 R.id.register -> {
-                    navController.navigateUp()
-                    navController.navigate(R.id.rigestor)
+                    navController.navigate(R.id.rigester)
                 }
                 R.id.profile -> {
-                    navController.navigateUp()
                     navController.navigate(R.id.profile)
                 }
             }

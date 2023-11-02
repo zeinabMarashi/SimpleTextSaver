@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg_main"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Rigestor">
+    tools:context=".Rigester">
 
 
     <androidx.cardview.widget.CardView
-        app:cardCornerRadius="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="30dp"
-        android:background="@drawable/bg_rigestor"
-        android:elevation="200dp">
+        android:background="@drawable/bg_rigester"
+        android:elevation="200dp"
+        app:cardCornerRadius="30dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="16dp"
-                android:text="Rigestor"
+                android:text="Rigester"
                 android:textAlignment="center"
                 android:textColor="@color/blue"
                 android:textSize="30sp"
@@ -40,65 +40,64 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="User name "
+                android:textColorHint="@color/blue"
                 app:boxStrokeColor="@color/blue"
                 app:shapeAppearance="@style/text"
                 app:startIconDrawable="@drawable/ic_user"
-                app:startIconTint="@color/blue"
-                android:textColorHint="@color/blue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint="User name ">
+                app:startIconTint="@color/blue">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Email address"
+                android:textColorHint="@color/blue"
                 app:boxStrokeColor="@color/blue"
                 app:startIconDrawable="@drawable/ic_email"
-                app:startIconTint="@color/blue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:textColorHint="@color/blue"
-                android:hint="Email address">
+                app:startIconTint="@color/blue">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                     />
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                app:boxStrokeColor="@color/blue"
-                app:startIconDrawable="@drawable/baseline_password_24"
-                app:startIconTint="@color/blue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:hint="Password"
                 android:textColorHint="@color/blue"
-                android:hint="Password">
+                app:boxStrokeColor="@color/blue"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/blue"
+                app:startIconDrawable="@drawable/baseline_password_24"
+                app:startIconTint="@color/blue">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:clickable="true"
-                android:background="@drawable/bg_rigestor"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_rigester"
                 android:backgroundTint="@color/blue"
+                android:clickable="true"
                 android:text="submit"
                 android:textSize="16sp" />
 

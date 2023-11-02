@@ -36,21 +36,12 @@ class SplashScreen : AppCompatActivity() {
             startActivity(intent)
             finish()
 
-        }, 2700)
-
-    }
-    private fun translateAnimation() {
-        val animTranslate = TranslateAnimation(
-            0f,0f,
-            -500f,-50f)
-        animTranslate.duration=3000
-        animTranslate.fillAfter=true
-        animTranslate.interpolator = DecelerateInterpolator() // high to Low  speed
-        binding.txtNameApp.startAnimation(animTranslate)
+        }, 3000)
 
 
 
     }
+
 
 
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/home">
+    app:startDestination="@id/rigester">
 
     <fragment
         android:id="@+id/home"
@@ -17,8 +17,8 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/rigestor"
-        android:name="com.example.simpletextsaver.Rigestor"
+        android:id="@+id/rigester"
+        android:name="com.example.simpletextsaver.Rigester"
         android:label="fragment_rigestor"
-        tools:layout="@layout/fragment_rigestor" />
+        tools:layout="@layout/fragment_rigester" />
 </navigation>

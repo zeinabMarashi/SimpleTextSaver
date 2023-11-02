@@ -25,6 +25,9 @@ lateinit var binding: FragmentHomeBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navController = findNavController()
+        val inclusive = true // Set to true to include this fragment in the pop
+        navController.popBackStack(R.id.home, inclusive)
 
     }
 }

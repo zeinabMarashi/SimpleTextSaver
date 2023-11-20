@@ -21,12 +21,9 @@ class SplashScreen : AppCompatActivity() {
 
         //for full screen in SplashScreen
         window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
+            WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-
         runSplash()
-
     }
 
     private fun runSplash() {

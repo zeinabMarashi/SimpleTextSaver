@@ -6,19 +6,36 @@
     app:startDestination="@id/rigester">
 
     <fragment
-        android:id="@+id/home"
-        android:name="com.example.simpletextsaver.Home"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-    </fragment>
-    <fragment
         android:id="@+id/profile"
         android:name="com.example.simpletextsaver.Profile"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <argument
+            android:name="userName"
+            app:argType="string"
+            android:defaultValue='' />
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue='' />
+        <argument
+            android:name="passWord"
+            app:argType="string"
+            android:defaultValue='' />
+    </fragment>
     <fragment
         android:id="@+id/rigester"
         android:name="com.example.simpletextsaver.Rigester"
-        android:label="fragment_rigestor"
-        tools:layout="@layout/fragment_rigester" />
+        android:label="fragment_rigester"
+        tools:layout="@layout/fragment_rigester" >
+
+        <action
+            android:id="@+id/action_rigester_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.simpletextsaver.home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

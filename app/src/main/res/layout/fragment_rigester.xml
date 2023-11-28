@@ -51,6 +51,7 @@
                 app:startIconTint="@color/blue">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_username_rigester"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -67,6 +68,7 @@
                 app:startIconTint="@color/blue">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_email_rigester"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -85,11 +87,13 @@
                 app:startIconTint="@color/blue">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_password_rigester"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:id="@+id/btn_submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"

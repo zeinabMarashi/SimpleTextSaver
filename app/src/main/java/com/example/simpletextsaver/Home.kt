@@ -6,10 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.simpletextsaver.databinding.DialogNewTextBinding
 import com.example.simpletextsaver.databinding.FragmentHomeBinding
+import org.w3c.dom.Text
 
 
 class home : Fragment() {
@@ -31,13 +35,42 @@ class home : Fragment() {
         val inclusive = true
         navController.popBackStack(R.id.home, inclusive)
 
+
+
+
+        val data = listOf<DataText>()
+        val adapter = Adapter(ArrayList(data))
+        binding.recyclerHome.adapter = adapter
+        binding.recyclerHome.layoutManager = LinearLayoutManager(requireContext() , RecyclerView.VERTICAL , false)
+
+
         binding.addNewText.setOnClickListener{
             val dialog = AlertDialog.Builder(requireContext()).create()
-            val view = DialogNewTextBinding.inflate(layoutInflater)
-            dialog.setView(view.root)
+            val dialogBinding = DialogNewTextBinding.inflate(layoutInflater)
+            dialog.setView(dialogBinding.root)
             dialog.setCancelable(true)
             dialog.show()
+
+
+            dialogBinding.btnSaveText.setOnClickListener {
+                if (dialogBinding.newText.text!!.isNotEmpty()){
+                  val text= dialogBinding.newText.text.toString()
+                    val newText =DataText(text)
+                    adapter.addNewText(newText)
+                    dialog.dismiss()
+
+
+                }else{
+                    Toast.makeText(requireContext() , "لطفا متن خود را وارد کنید" , Toast.LENGTH_LONG).show()
+                }
+
+            }
+            dialogBinding.btnCancel.setOnClickListener {
+                dialog.dismiss()
+            }
         }
+
+
 
     }
 }

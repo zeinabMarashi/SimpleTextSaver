@@ -48,6 +48,7 @@
                 app:startIconTint="@color/blue">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/new_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -59,6 +60,8 @@
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="save"
+                android:textSize="10sp"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -72,6 +75,7 @@
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:text="cancel"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

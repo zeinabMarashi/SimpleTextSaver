@@ -1,3 +1,4 @@
+
 package com.example.simpletextsaver
 
 import android.view.LayoutInflater
@@ -32,6 +33,11 @@ class Adapter(val data: ArrayList<DataText>) : RecyclerView.Adapter<Adapter.View
     fun addNewText(text: DataText){
         data.add(0 , text)
         notifyItemInserted(0)
+    }
+
+    fun deleteText(text: Int){
+        data.removeAt(text)
+        notifyDataSetChanged()
     }
 
 

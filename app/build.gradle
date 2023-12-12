@@ -52,4 +52,5 @@ dependencies {
     //chip navigation
     implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
     implementation 'com.airbnb.android:lottie:6.1.0'
+    implementation 'it.xabaras.android:recyclerview-swipedecorator:1.4'
 }

@@ -7,14 +7,23 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.simpletextsaver.databinding.ItemNewTextBinding
 
-class Adapter(val data: ArrayList<DataText>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
+class Adapter(val data: ArrayList<DataText> , private val textEvent: TextEvent) : RecyclerView.Adapter<Adapter.ViewHolder>() {
     lateinit var binding: ItemNewTextBinding
 
     inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bindViews(position: Int){
             binding.txtShowText.text = data[position].text
+
+
+            view.setOnClickListener{
+                textEvent.onClickText(data[adapterPosition] , adapterPosition)
+
+
+            }
         }
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -39,6 +48,22 @@ class Adapter(val data: ArrayList<DataText>) : RecyclerView.Adapter<Adapter.View
         data.removeAt(text)
         notifyDataSetChanged()
     }
+
+    fun updateText (text: DataText , position: Int){
+
+        data.set(position , text)
+        notifyItemChanged(position)
+
+
+
+    }
+
+    interface TextEvent{
+
+        fun onClickText(text: DataText , position: Int)
+    }
+
+
 
 
 }

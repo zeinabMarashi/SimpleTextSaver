@@ -13,13 +13,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.simpletextsaver.databinding.DialogEditTextBinding
 import com.example.simpletextsaver.databinding.DialogNewTextBinding
 import com.example.simpletextsaver.databinding.FragmentHomeBinding
 import org.w3c.dom.Text
 
 
-class home : Fragment() {
+class home : Fragment() , Adapter.TextEvent {
     lateinit var binding: FragmentHomeBinding
+    lateinit var adapter: Adapter
 
 
     override fun onCreateView(
@@ -39,7 +41,7 @@ class home : Fragment() {
 
 
         val data = listOf<DataText>()
-        val adapter = Adapter(ArrayList(data))
+        adapter = Adapter(ArrayList(data) , this)
         binding.recyclerHome.adapter = adapter
         binding.recyclerHome.layoutManager =
             LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
@@ -88,5 +90,34 @@ class home : Fragment() {
         }
 
 
+    }
+
+    override fun onClickText(text: DataText , position : Int) {
+        val dialog = AlertDialog.Builder(requireContext()).create()
+        val viewEdit = DialogEditTextBinding.inflate(layoutInflater)
+        viewEdit.newText.setText(text.text)
+        dialog.setView(viewEdit.root)
+        dialog.setCancelable(true)
+        dialog.show()
+
+        viewEdit.btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        viewEdit.btnSaveText.setOnClickListener {
+            
+            if (viewEdit.newText.length()>0){
+                val text = viewEdit.newText.text.toString()
+                val newText = DataText(text)
+
+                adapter.updateText(newText , position)
+                dialog.dismiss()
+            }else{
+
+                Toast.makeText(requireContext(), "لطفا نوشته خود را وارد کنید", Toast.LENGTH_SHORT).show()
+            }
+  
+
+        }
     }
 }
